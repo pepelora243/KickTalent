@@ -15,7 +15,9 @@ export class ProjectDetailComponent implements OnInit {
     _id: ""
   };
   showbutton:boolean=false
-  constructor(private projectService:ProjectService,private router:Router, private route:ActivatedRoute,private session:SessionService) {
+  username:any
+  password:any
+  constructor(public projectService:ProjectService,public router:Router, public route:ActivatedRoute,public session:SessionService) {
 
   this.route.params.subscribe(params=> {
     this.projectService.get(params.id).subscribe(project => {

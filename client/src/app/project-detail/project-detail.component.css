@@ -1,11 +1,31 @@
 img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 50%
+    border-radius: 50%;
+ 
     
 }
 .card-header{
     display: flex;
-    flex-direction: column  
+    flex-direction: row 
+}
+
+.card-text{
+    display: flex;
+    text-align: right;
+    text-align-last: center;
+    margin-left: 194px;
+    
+   
+    
+}
+.grande{
+    margin:0 auto
+}
+.card{
+    width: 500px;
+}
+button{
+    margin-left: 10px
 }

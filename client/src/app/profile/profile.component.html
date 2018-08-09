@@ -1,0 +1,8 @@
+<h1>Project Lobby</h1>
+<div>
+<h2>Players</h2>
+<div *ngFor='let d of members.approved'>
+  <h3>{{d.username}}</h3>
+  <a [routerLink]="['/chat', d._id]"><button>open chat</button></a>
+</div>
+

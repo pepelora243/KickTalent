@@ -30,7 +30,7 @@ export class SessionService {
         console.log(`Automatically login ${this.user.username}`);
         return this.user;
       }),
-      catchError(e => {console.log("You have to login first!"); return of(e)})
+      catchError(e => {console.log("You have to login first!"); return of(null)})
     );
   }
 

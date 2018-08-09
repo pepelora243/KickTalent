@@ -96,6 +96,15 @@ router.get('/getUserProject/:id', (req, res, next) => {
         .catch(e => next(e))
 })
 
+router.get('/gotoprofile/:id',(req,res,next)=>{
+    Project.findById(req.params.id)
+    .populate("approved")
+    .populate("creator")
+    .then(groups=>{
+        res.status(200).json(groups)
+    })
+})
+
 
 
 

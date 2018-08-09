@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  constructor(private sessionService:SessionService, private router:Router) { }
+  username:any
+  password:any
+  error:any
+  constructor(public sessionService:SessionService, public router:Router) { }
 
   ngOnInit() {
   }

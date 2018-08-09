@@ -48,7 +48,6 @@ export class ProjectService {
         return this.http
         .get(`${this.BASE_URL}/api/project/approve/${projectId}/${userId}`,this.options)
         .pipe(map(res=> {
-            console.log(`New project`,res.json())
             return res.json()
         }))
     }
@@ -64,7 +63,12 @@ export class ProjectService {
     userProject(userId){
         return this.http
         .get(`${this.BASE_URL}/api/project/getUserProject/${userId}`).pipe(map(res=>{
-            console.log(res.json())
+            return res.json()
+        }))
+    }
+    goToProfile(id){
+        return this.http
+        .get(`${this.BASE_URL}/api/project/gotoprofile/${id}`).pipe(map(res=>{
             return res.json()
         }))
     }

@@ -47,9 +47,10 @@ export class NewProjectComponent implements OnInit {
 ];
 
 
-
+username:any
+password:any
   //selectedValue = null;
-  constructor(private projectService: ProjectService, private router: Router, private sessionS: SessionService) {
+  constructor(public projectService: ProjectService, public router: Router, public sessionS: SessionService) {
     this.sessionS.isLogged().subscribe(user => {
       this.newProject.user = user._id
     })

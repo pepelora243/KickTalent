@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session';
 import { ProjectService } from '../../services/project';
+import { ChatService } from '../../services/chat.service';
 
 interface UserObject {
   _id:any,
@@ -17,13 +18,15 @@ interface UserObject {
   ]
 })
 export class HomeComponent implements OnInit {
-
+  buscar:any;
   user: UserObject;
   projectHome: any;
   searchedProjects;
   userProjects;
-
-  constructor(private session: SessionService, private project: ProjectService) {
+  messages
+  username:any
+  password:any
+  constructor(public session: SessionService, public project: ProjectService,public chatService:ChatService) {
     this.project.getList().subscribe(data => {
       this.searchedProjects = data
     })

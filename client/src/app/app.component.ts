@@ -15,7 +15,9 @@ interface UserObject{
 export class AppComponent {
   title = 'app';
   user:UserObject;
-  constructor(private sessionService:SessionService){
+  username:any
+  password:any
+  constructor(public sessionService:SessionService){
   }
   
   logout(){

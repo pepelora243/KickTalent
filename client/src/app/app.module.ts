@@ -14,9 +14,14 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { ProjectService } from '../services/project';
 import { PetitionsComponent } from './petitions/petitions.component';
 import { ApprovedComponent } from './approved/approved.component';
-import { FileSelectDirective } from 'ng2-file-upload';
+
 import {VSChecklistModule} from 'ng2-vs-checklist';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ProfileComponent } from './profile/profile.component';
+import { EnterDetailGuardService } from '../services/enter-detail-guard.service';
+import { ChatService } from '../services/chat.service';
+import { ChatComponent } from './chat/chat.component';
+import { FileUploadModule} from 'ng2-file-upload'
 
 
 
@@ -31,7 +36,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ProjectDetailComponent,
     PetitionsComponent,
     ApprovedComponent,
-    FileSelectDirective,
+
+    ProfileComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +49,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatCheckboxModule,
     BrowserModule,
     MatCheckboxModule,
+    FileUploadModule
+    
   ],
-  providers: [SessionService,ProjectService],
+  providers: [SessionService,ProjectService, EnterDetailGuardService,ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

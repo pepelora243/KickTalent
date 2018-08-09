@@ -3,11 +3,15 @@
         <div class="buscador">
             <input type="text" [(ngModel)]="buscar" (ngModelChange)="buscador(buscar)">
             <i class="fas fa-search"></i>
-    
+
         </div>
-       <div *ngIf="session.user"><i class="fas fa-user-alt"></i>  {{session.user.username}}</div> 
+        <div *ngIf="session.user">
+            <i class="fas fa-user-alt"></i> {{session.user.username}}</div>
     </header>
-    <div class="container">
+    <div  class="container">
+        <button *ngIf="session.user" class="btn btn-outline">
+            <a [routerLink]="['/petitions']">petitions</a>
+        </button>
         <div *ngIf="session.user">
             <button class="btn btn-outline">
                 <a [routerLink]="['new']">Create a new project</a>
@@ -15,11 +19,8 @@
             <br>
 
 
-            <br>
-            <button class="btn btn-outline">
-                <a [routerLink]="['/petitions']">petitions</a>
-            </button>
 
+            <br>
         </div>
 
 
@@ -77,3 +78,4 @@
 
     </div>
 </div>
+

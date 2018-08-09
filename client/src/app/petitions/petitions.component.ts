@@ -9,8 +9,10 @@ import { ProjectService } from '../../services/project';
 export class PetitionsComponent implements OnInit {
 
   projects:Object;
+  username:any
+  password:any
 
-  constructor(private pr:ProjectService) { }
+  constructor(public pr:ProjectService) { }
 
   ngOnInit() {
     this.pr.getList().subscribe(data => {

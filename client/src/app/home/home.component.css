@@ -1,0 +1,37 @@
+/* .right{
+    float: right;
+   
+    
+}
+
+.left{
+    float:left;
+    
+} */
+
+.general{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
+}
+.card{
+    width: 20rem;
+}
+h1{
+    text-align: center
+}
+.buscador{
+    margin:0 auto;
+
+}
+.fas{
+    color: aliceblue;
+    
+}
+input, select, textarea{
+    color:white;
+}
+header{
+    padding-top:18px;
+    padding-right: 13px;
+}

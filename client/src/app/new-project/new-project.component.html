@@ -1,0 +1,30 @@
+<h1> Create a new Proyect </h1>
+<a [routerLink]="['']"> Return to project list</a>
+
+<form>
+  <label> Title </label>
+  <input type="text" [(ngModel)]="newProject.title" name="title" required />
+  
+  <label> Description </label>
+  <input type="text" [(ngModel)]="newProject.description" name="description" required />
+
+  <div>
+      <label>Profiles</label>
+      <select multiple name="topics" [(ngModel)]="user.topics">
+          <option *ngFor="let topic of topics" [value]="topic.value">  
+              {{topic.display}}
+          </option>
+      </select>
+  </div>
+
+  <!-- <div *ngFor="let c of newProject.options">
+  <input  type="checkbox" checklist-model="c.profile"> {{c.profile}}<br> -->
+  <!-- <option  [ngValue]="c.profile">{{c.profile}}</option> -->
+  
+ <!-- </div> -->
+
+
+  <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+  <button (click)="submit()"> Guardar </button>
+</form>
+

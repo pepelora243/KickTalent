@@ -1,0 +1,8 @@
+
+  <div *ngFor="let project of projects">
+    <div *ngFor='let person of project.petitions'>
+      {{person.username}}  SOLICITATED TO JOIN YOUR PROJECT 
+      <button (click)="approved(project._id,person._id)">Aprove</button>
+    </div>
+  </div>
+

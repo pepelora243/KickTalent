@@ -15,10 +15,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(username:string, password:string){
-    console.log("login....");
+   
     this.sessionService.login(username,password).subscribe( user => {
-      console.log(user);
-      this.router.navigate(["/home"])
+    
+      this.router.navigate(["/home"],user)
     });
   }
 

@@ -9,6 +9,7 @@ const bcryptSalt = 10;
 
 const login = (req, user) => {
   return new Promise((resolve,reject) => {
+    console.log("user " + user)
     req.login(user, err => {
       if(err) {
         reject(new Error('Something went wrong'))
@@ -18,7 +19,6 @@ const login = (req, user) => {
     })
   })
 }
-
 
 // SIGNUP
 authRoutes.post('/signup', (req, res, next) => {

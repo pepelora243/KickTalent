@@ -1,5 +1,79 @@
-<div class="container">
-  <div>
-    <img src="https://www.lifewire.com/thmb/Oyf1CbS_zWEFiDM16pGudIZc3XE=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simpsons_09_Homer_V2F_hires1-56e1eccc5f9b5854a9f89a63.jpg" alt="">
-  </div>
+<div class="main-container">
+    <header class="header header-6">
+        <div class="buscador">
+            <input type="text" [(ngModel)]="buscar" (ngModelChange)="buscador(buscar)">
+            <i class="fas fa-search"></i>
+    
+        </div>
+       <div *ngIf="session.user"><i class="fas fa-user-alt"></i>  {{session.user.username}}</div> 
+    </header>
+    <div class="container">
+        <div *ngIf="session.user">
+            <button class="btn btn-outline">
+                <a [routerLink]="['new']">Create a new project</a>
+            </button>
+            <br>
+
+
+            <br>
+            <button class="btn btn-outline">
+                <a [routerLink]="['/petitions']">petitions</a>
+            </button>
+
+        </div>
+
+
+        <div class="general">
+            <div>
+                <h1>All Projects</h1>
+                <div class="main-container" class="projectList col-md-6 left" *ngFor="let projectItem of searchedProjects">
+                    <div class="row">
+                        <div *ngIf="project">
+                            <div class="card">
+                                <div class="card-header">
+                                    {{ projectItem.title }}
+                                </div>
+                                <div class="card-block">
+                                    <div class="card-title">
+                                        <p>{{ projectItem.description }}</p>
+                                    </div>
+                                    <div class="card-text">
+                                        {{ projectItem.profile[0]}}
+                                    </div>
+                                    <a href="home/{{projectItem._id}}">go to project</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="userProjects">
+                <h1>My Projects</h1>
+                <div *ngFor="let up of userProjects" class="col-md-6 right">
+                    <div *ngIf="project">
+                        <div class="card">
+                            <div class="card-header">
+                                {{ up.title }}
+                            </div>
+                            <div class="card-block">
+                                <div class="card-title">
+                                    <p>{{ up.description }}</p>
+                                </div>
+                                <div class="card-text">
+                                    {{ up.profile}}
+                                </div>
+                                <a href="home/{{up._id}}">go to project</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>

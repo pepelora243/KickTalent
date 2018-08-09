@@ -1,11 +1,25 @@
-<form>
-  <h2> Login </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
 
-  <button (click)="login(username,password)"> login </button>
-</form>
-<p class="error"> {{ error }} </p>
+<div classclass="login-wrapper">
+    <form  classclass="login">
+            <section  class="title">
+                    <h3 class="welcome">Welcome to</h3>
+       KICKTALENT
+                 
+   </section>
+  
+       <input class="username"  [(ngModel)]="username" type="text" id="login_username" name="Username" placeholder="Username">
+       <input class="password" [(ngModel)]="password" type="password" id="login_password" name="Password" placeholder="Password">
+       <div class="checkbox">
+           <input type="checkbox" id="rememberme">
+           <label for="rememberme">
+               Remember me
+           </label>
+       </div>
+       <div class="error active">
+          {{ error }}
+           Invalid user name or password
+       </div>
+       <button (click)="login(username,password)" type="submit" class="btn btn-primary">LOGIN</button>
+       <a href="signup" class="signup">Sign up</a>
+      </form>
+   </div>

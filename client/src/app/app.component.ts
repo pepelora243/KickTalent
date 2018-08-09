@@ -7,7 +7,10 @@ interface UserObject{
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: [
+    './app.component.css',
+    '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
+]
 })
 export class AppComponent {
   title = 'app';

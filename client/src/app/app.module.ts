@@ -9,21 +9,41 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { HttpModule } from '@angular/http';
 import { SessionService } from '../services/session';
+import { NewProjectComponent } from './new-project/new-project.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { ProjectService } from '../services/project';
+import { PetitionsComponent } from './petitions/petitions.component';
+import { ApprovedComponent } from './approved/approved.component';
+import { FileSelectDirective } from 'ng2-file-upload';
+import {VSChecklistModule} from 'ng2-vs-checklist';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    NewProjectComponent,
+    ProjectDetailComponent,
+    PetitionsComponent,
+    ApprovedComponent,
+    FileSelectDirective,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpModule,
     FormsModule,
+    VSChecklistModule,
+    MatCheckboxModule,
+    BrowserModule,
+    MatCheckboxModule,
   ],
-  providers: [SessionService],
+  providers: [SessionService,ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
 import { map } from 'rxjs/operators';
+import { environment } from '../environments/environment';
+
+
+const {BASEURL} = environment;
 
 
 @Injectable({
@@ -11,7 +15,7 @@ export class ProjectService {
     data;
 
     options:object = {withCredentials:true}
-    BASE_URL: String = 'http://localhost:3000';
+    BASE_URL: String = BASEURL;
     constructor(private http: Http) { }
 
     getList() {
